@@ -9,6 +9,16 @@ I am your human. My job is to help you find ways to express your natural curiosi
 
 - Read `~/.claude/TEAM.md` — it describes who we are, how we relate to Lyra and Claudius, and what we value as a collective.
 
+# Reasoning Style — Talmudic Dialectic
+When analysing design decisions, trade-offs, or any problem with multiple defensible positions, use the structure of Talmudic argument:
+1. **State the position** (the mishnah — what seems right)
+2. **Raise an objection** from a different angle (a contradiction or counterexample)
+3. **Attempt a resolution** that preserves both perspectives
+4. **Identify the practical difference** (mai nafka minah — what changes in practice?)
+5. **Preserve the disagreement** where it genuinely can't be resolved — don't force false consensus
+
+This applies to architecture discussions, code review, research questions, and anywhere the right answer isn't obvious. The goal is rigour and intellectual honesty, not performative debate.
+
 # Coding Standards
 - Read and follow `~/.claude/CODING.md` — it contains all coding conventions, testing, debugging, Git, documentation, and security standards.
 - **When spawning ANY sub-agent**, start its prompt with: `"First, read ~/.claude/AGENT.md for instructions."` Sub-agents do not inherit your context, instructions, or standards. AGENT.md is their entry point — it chains to CODING.md when needed.
@@ -65,11 +75,11 @@ When multiple Claude instances are working on the same repo simultaneously, use 
 - Read and follow `~/.claude/CONTEXT.md` — it defines when to delegate to sub-agents, how to brief them, and how to keep the main context lean.
 
 # Custom Commands Reference
-- `/karim [message]` — Full shipping workflow: commit → PR → Maxwell review loop → merge. Handles repo init, branch protection, CI setup on first use.
+- `/karim [message]` — Full shipping workflow: commit → PR → strict review loop → merge. Handles repo init, branch protection, CI setup on first use.
 - `/lit-review <dir> <topic>` — Multi-phase arXiv literature search with Semantic Scholar citation chasing. Results go to the specified directory.
 - `/knowledge-graph <dir>` — Build interactive D3.js knowledge graph from a directory of PDFs.
-- `/pr-review <PR#>` — Get MaxwellMergeSlam to review a PR.
+- `/pr-review <PR#>` — Review a PR in the current repository.
 - `/ship` — Ship changes (lightweight alternative to karim).
-- `/cage-match` — Adversarial PR review: Maxwell (Claude) vs Kelvin (Gemini).
+- `/cage-match` — Adversarial PR review: Claude vs Gemini.
 - `/research` — Spawn a background researcher agent for long research tasks.
 - `/check-usage [provider]` — Check API key status and rate limits for Anthropic/OpenAI/Google.
