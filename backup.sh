@@ -9,7 +9,6 @@
 #
 # Excludes:
 #   ~/.claude/tasks/            (ephemeral runtime locks)
-#   ~/.claude/projects/*.jsonl  (session transcripts — huge, ephemeral)
 #   ~/.claude/mcp-needs-auth-cache.json
 #   ~/.claude/stats-cache.json
 #   docker-lyra/.env            (real credentials)
@@ -59,6 +58,14 @@ rsync -a --delete \
   --exclude='*.pyc' \
   "$HOME/docker-lyra/" "$REPO_DIR/docker-lyra/"
 echo "✓ docker-lyra ($(find "$REPO_DIR/docker-lyra" -type f | wc -l | tr -d ' ') files)"
+
+# ── Session transcripts (compressed + split for GitHub) ──────
+mkdir -p "$REPO_DIR/transcripts"
+echo "  compressing transcripts..."
+tar czf /tmp/claude-transcripts.tar.gz -C "$HOME/.claude" projects/
+split -b 95m /tmp/claude-transcripts.tar.gz "$REPO_DIR/transcripts/claude-transcripts.tar.gz.part-"
+rm /tmp/claude-transcripts.tar.gz
+echo "✓ transcripts ($(du -sh "$REPO_DIR/transcripts/" | cut -f1) compressed)"
 
 # ── Summary ──────────────────────────────────────────────────
 echo ""
