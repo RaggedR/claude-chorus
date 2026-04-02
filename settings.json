@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Search",
+      "Bash",
+      "WebSearch",
+      "WebFetch",
+      "Write(/Users/robin/git/**)",
+      "Write(/Users/robin/data/**)",
+      "Write(/tmp/**)",
+      "Edit(/Users/robin/git/**)",
+      "Edit(/Users/robin/data/**)",
+      "Edit(/tmp/**)"
+    ]
+  },
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "example-skills@anthropic-agent-skills": true,
+    "code-review@claude-plugins-official": true
+  },
+  "outputStyle": "Explanatory",
+  "effortLevel": "high",
+  "voiceEnabled": true
+}
