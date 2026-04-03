@@ -1,0 +1,14 @@
+# [Your Model Isn't the Problem, Your Agent Harness Is the Reason Everything Breaks in Production](https://medium.com/@cognidownunder/your-model-isnt-the-problem-your-agent-harness-is-the-reason-everything-breaks-in-production-c4cc9655144f)
+**Author:** Cogni Down Under (@cognidownunder) — 556 followers
+**Approx claps/responses:** 1 clap, 0 responses
+**Date:** Feb 24, 2026 | 8 min read | Free article (not paywalled)
+
+**Summary:** Argues the "model upgrade treadmill" is a trap — teams keep swapping models hoping for better production results, but failures are almost always harness problems. Identifies three production traps: Dumb RAG (dumping everything into context), Brittle Connectors (fragile API integrations), No Durable Execution (treating agent tasks as ephemeral). Provides practical harness engineering primitives: context engineering, self-verification loops, loop detection, durable state management, adaptive reasoning budgets. Key insight: "build to delete" — every harness component should be removable when the model improves. Provocative claim: the harness becomes a dataset and competitive moat over time (behavioral data for fine-tuning).
+
+**Audience framing:** Uses the "computer stack" analogy: model=CPU, context window=RAM, harness=OS, agent=application. "Plumbing" framing — unglamorous but essential. Production-focused language: "3 to 9 months to deploy reliably." FAQ section at the end shows SEO awareness. Heavy hashtag section (#AgentHarness #ContextEngineering etc.) signals growth-stage author trying to maximize discoverability.
+
+**Engagement:** Very low (1 clap, 0 responses) despite solid content. The full article is freely accessible (not paywalled), which may actually HURT discoverability on Medium's algorithm (member-only stories get boosted). The content overlaps heavily with Pappas's article (same day: Feb 24, 2026) and cites similar sources. The "Three Traps" framing is strong but the writing is less distinctive than Pappas or Rezvani. SEO-optimized but voice-flat.
+
+**Gap spotted:** The article names THREE failure traps but doesn't explain WHY they're traps mathematically. "Dumb RAG" is a composition failure (non-associative retrieval). "Brittle Connectors" is a functorial coherence failure. "No Durable Execution" is a state monad violation. The article says "build to delete" but doesn't explain the PRINCIPLE behind what's deletable and what isn't — the monad laws tell you exactly which parts are essential and which are accidental. Also, the "harness as dataset/moat" claim is interesting but underdeveloped — it's another composition insight (the harness generates its own training data because it's a closed compositional structure).
+
+**Worth following:** No — the content is solid but derivative, low engagement, and the voice isn't distinctive enough. The same insights are better expressed by Pappas and Agent Native. Not adding to feeds.

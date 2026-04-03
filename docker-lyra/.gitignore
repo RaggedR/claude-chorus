@@ -1,0 +1,4 @@
+.env
+*.log
+tmp/
+claude-home/.credentials.json
