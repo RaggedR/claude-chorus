@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Search",
+      "Write",
+      "Edit",
+      "Bash(*)",
+      "WebSearch",
+      "WebFetch",
+      "mcp__gmail__check_inbox",
+      "mcp__gmail__read_email",
+      "mcp__gmail__send_email",
+      "mcp__gmail__download_attachments",
+      "mcp__gmail__mark_as_read",
+      "mcp__playwright__*",
+      "mcp__scrapling__*"
+    ],
+    "deny": []
+  },
+  "model": "opus",
+  "mcpServers": {
+    "gmail": {
+      "command": "python3",
+      "args": ["/home/lyra/scripts/email_mcp_server.py"],
+      "cwd": "/home/lyra/scripts"
+    },
+    "playwright": {
+      "command": "/usr/bin/playwright-mcp",
+      "args": [
+        "--no-sandbox",
+        "--user-data-dir", "/home/lyra/.playwright-profile",
+        "--browser", "chromium"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/opt/playwright-browsers",
+        "DISPLAY": ":99"
+      }
+    },
+    "scrapling": {
+      "command": "scrapling",
+      "args": ["mcp"]
+    }
+  }
+}

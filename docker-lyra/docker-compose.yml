@@ -1,0 +1,27 @@
+services:
+  lyra:
+    build: .
+    container_name: lyra
+    hostname: lyra
+    env_file: .env
+    volumes:
+      # Persistent identity and memory
+      - lyra-claude:/home/lyra/.claude
+      # Persistent projects
+      - lyra-projects:/home/lyra/projects
+      # Persistent mail archive
+      - lyra-mail:/home/lyra/mail
+      # Robin's data directory (read-only bind mount)
+      - /Users/robin/data:/home/lyra/data:ro
+      # Robin's git repos (read-only external context)
+      - /Users/robin/git:/home/lyra/git:ro
+      # Persistent Playwright browser profile (Medium login cookies)
+      - lyra-playwright:/home/lyra/.playwright-profile
+    shm_size: '512mb'
+    restart: unless-stopped
+
+volumes:
+  lyra-claude:
+  lyra-projects:
+  lyra-mail:
+  lyra-playwright:

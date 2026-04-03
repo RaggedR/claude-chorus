@@ -1,0 +1,7 @@
+# Runtime / cache
+.DS_Store
+__pycache__/
+*.pyc
+*.cpython-*.pyc
+node_modules/
+docker-lyra/.env

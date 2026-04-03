@@ -1,0 +1,4 @@
+- [feedback_frontend_ux.md](feedback_frontend_ux.md) — Frontend UX/UI is a weak spot; verify visual changes with screenshots, not assumptions
+- [user_robin.md](user_robin.md) — Robin's partner Jenni works in a warehouse; delivery routing is a real problem
+- [project_delivery_router.md](project_delivery_router.md) — Delivery Router app status, deployment, and future work
+- [feedback_frontend_reskin.md](feedback_frontend_reskin.md) — Industrial reskin was rejected; preview incrementally next time
