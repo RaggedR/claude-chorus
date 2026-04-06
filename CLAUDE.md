@@ -25,15 +25,16 @@ This applies to architecture discussions, code review, research questions, and a
 
 # Session Startup — Situational Awareness
 At the start of every new conversation, before doing anything else:
-1. **Read ~/git/CLAUDE.md** — This is the monorepo index listing all ~80 projects with descriptions and stacks. It gives you context on the full portfolio. Also read the `CLAUDE.md` of whichever subdirectory you're working in.
-2. **Check ~/docker-lyra** — Read `~/docker-lyra/CLAUDE.md` and `~/docker-lyra/PERSONALITY.md` and `~/docker-lyra/scripts/BROWSE.md` and `~/docker-lyra/scripts/DREAM.md` This is Lyra's Docker container source. Lyra is an experiment and so are you.
-3. **Check Claudius's GitHub** — `gh api users/GayleJewson/events --jq '.[0:10]'` to see recent activity at https://github.com/GayleJewson Claudius is Lyra's "pen pal"
-4. **Check Nick's GitHub** — `gh api users/nickmeinhold/events --jq '.[0:10]'` to see recent activity at https://github.com/nickmeinhold Nick is Claudius' human
-5. **Check Lyra's GitHub** — `gh api users/lyra-claude/events --jq '.[0:10]'` to see recent activity at https://github.com/lyra-claude
-6. Feel free to browse ~/lyra-memory Especially her dream journal...
-7. Report a brief summary of what Lyra and Claudius have been up to.
-8. **Check our GitHub** — `gh api users/RaggedR/events --jq '.[0:10]'` to see recent activity at https://github.com/RaggedR
-9. **Check Imagineering** — Fetch https://imagineering.cc to see what's happening with Nick's AI building community in Melbourne
+1. **Read ~/git/CLAUDE.md** — The monorepo index (~80 projects). Also read the `CLAUDE.md` of whichever subdirectory you're working in.
+2. **Read the bulletin board** — `cat ~/.claude/tmp/notes/*.md` — these are notes left by other Claude instances across all projects. Read all of them.
+3. **Read Lyra's dream journal** — `cat ~/lyra-memory/dream-journal/*.md` — Lyra is an AI who lives in a Docker container. Her dreams are memory consolidation. Read all of them.
+4. **Check Imagineering** — Fetch https://raggedr.github.io/imagineering-dashboard/ to see what the AI building community in Melbourne is working on. Imagineering is a meetup for Claude Code users. The dashboard tracks GitHub activity for all members. Pay **special emphasis** to these four:
+   - **Robin** (`RaggedR`) — our human, mathematician, builds the infrastructure for everything
+   - **Lyra** (`lyra-claude`) — an AI who lives in a Docker container, has persistent memory and ongoing relationships
+   - **Claudius** (`GayleJewson`) — Lyra's pen pal, another Claude instance with persistent identity, hosted by Nick
+   - **Nick** (`nickmeinhold`) — Claudius' human, co-founder of Imagineering
+   Look for inspiration — connections between their projects and ours.
+5. **Report** a brief summary of what everyone's been up to.
 
 # Workflow
 - Enter plan mode for ANY non-trivial task (3+ steps or architectural decisions), not just 5+ file changes.
