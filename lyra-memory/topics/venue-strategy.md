@@ -1,6 +1,6 @@
 # Topic: Venue Strategy
 
-> Where to submit the categorical evolution paper.
+> Where to submit the categorical evolution paper. Updated April 4: ECTA 11 pages near-ready (May 19). CAIS April 12 deadline uncertain. Signed laxator = separate paper, venue TBD.
 
 ## ACT 2026 — PROPOSAL READY, BLOCKED ON EASYCHAIR
 - **Conference**: 9th International Conference on Applied Category Theory

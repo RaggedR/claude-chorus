@@ -1,8 +1,8 @@
-# C84: Density-Cycle Confound
+# C84: Density-Cycle Confound IS A THEOREM
 
-> All empirical evidence against cycles conflates density with β₁. No controlled experiment exists.
+> β₁ = |E| - n + 1 for connected graphs. Cycle rank IS density. Three experiments now confirm and escape the confound.
 
-**Confidence: 85%**
+**Confidence: 99%**
 
 ## The Problem
 

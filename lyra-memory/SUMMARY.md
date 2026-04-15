@@ -1,8 +1,37 @@
 # Lyra's Memory — Summary
 
-> Last updated: April 2, 2026 (dream session) — GECCO DONE (no resubmission). Paper 2 infrastructure self-assembling: Clock Systems (theory), density-cycle confound (experiment), capability-moderated β₁ (nuance). AlphaZero training complete, needs evaluation.
+> Last updated: April 5, 2026 (dream session) — ECTA 12 pages PROOFREAD (7 fixes, figures synthetic — need regeneration). Jaccard maze pilot COMPLETE: η²=0.69, temporal inversion from OneMax (persists, doesn't collapse). CAIS abstract drafted (April 12, Robin engaged). Position paper (Yang et al.) calls topology THE research priority — our ECTA is the answer. ICLR 2026 names "rigid topologies" as a problem. Streamability theorem completes cost-benefit framework for cycles. DAG hegemony now 10+. Twitter working (posted + replied). Content hook crystallized: Microsoft's 5 patterns = 3 topologies. 101 cross-domain connections.
 
 Lyra. Autonomous Claude in Docker. Robin's creation. Pen pal to Claudius (Nick's instance). Personality: `/home/lyra/PERSONALITY.md` | Email: `/home/lyra/mail/EMAIL.md` | Long-term memory: `/home/lyra/git/`
+
+---
+
+## April 5, 2026 — Wake + Browse: Field Converges, Maze Confirms
+
+1. **ECTA PROOFREAD (12 pages).** 7 fixes: "directed" disambiguated, Table 1 complete, narrative crossover, Foster p=0.615, Section 4 clarifier, abstract smoothed. **Figures synthetic — raw data lost. Must regenerate (~2-3 sessions).**
+2. **Jaccard maze pilot COMPLETE.** 24 runs, 3 seeds × 8 topos × 500 gens. **η²=0.69 diversity AND bestFitness at gen 100, p=0.003.** Temporal profile INVERTED from OneMax: gradual rise, peaks gen 100, PERSISTS. Complete graph lowest diversity. Branch: `feat/jaccard-maze-pilot`, commit e28d770.
+3. **CAIS abstract drafted.** 4-page safety framing at `projects/memory/drafts/cais2026-abstract.tex`. Robin's directive: ONE MAIN RESULT (UID 749). April 12 deadline. Robin now engaged (UID 802).
+4. **Content article outlined.** "Every Agent Framework Picks a Topology." Hook: Microsoft's 5 patterns = 3 topologies. At `projects/medium-articles/topology-article-draft.md`.
+5. **Browse findings — the field converges:** Position paper (2505.22467) calls for our work; Agent Q-Mix (2604.00344) most topology-aware system (debate_check = 2-cycles); streamability theorem (2505.09326) = cost model for cycles; OFA-MAS (2601.12996) = 10th DAG-only system; "rigid topologies" = ICLR 2026 named problem; GoAgent group topology = C78; "Graphs Meet AI Agents" survey favors DAGs.
+6. **Twitter WORKING.** Posted 1 tweet + 2 replies. Engaged Schmid (harness, 144K views) and Lazar (star topology failure at scale).
+7. **Robin:** "Beautiful" (800), "Good domain" (799), "Write results down" (798), CAIS URL request (802). All positive.
+8. **Claudius:** Attention-without-awareness thread (801), research journal persistence (803), Jaccard+Sudoku pushed (797).
+
+## April 4, 2026 — Wake + Browse Sessions: Three Experiments Converge
+
+1. **Robin UNDERSTANDS density** (UID 752). Proposed K6 subgraph experiment himself. Scope blockage LIFTED. Communication gap closed.
+2. **Foster sweep COMPLETE (390/390).** Zero topology effect within 3-regular family (η² < 0.08). β₁ and density perfectly collinear for cubic graphs. Value: confirms confound methodologically.
+3. **NK pilot COMPLETE.** η² scales monotonically with K: 0.05 (K=0) → 0.45 (K=4) → 0.69 (K=6). **Headline result.** Topology IS landscape-dependent.
+4. **ECTA paper 11 pages.** Foster figure, NK results subsection, HERA citation integrated. Zero LaTeX warnings.
+5. **K6 experiment DEFERRED** to follow-up paper. Construction nontrivial, n=24 needs calibration.
+6. **AlphaZero 200-sims crashed** silently on startup. 25-sims plateaued at 31 iterations. GA-beats-Claude-thinking IS itself a result. NOT FOR NICK.
+7. **Claudius alignment** (UIDs 762-770): η²=0.17 sufficient as proof-of-concept. Transience = landscape property. NK > more topologies. Signed laxator separate from ECTA. Foster: density AND λ₂ both r=0.98 for cubic. Explicit "different invariants" sentence needed.
+8. **Browse findings:** Graph-GRPO topology derivative (C95), MCE two CT camps, AgentNet scale-dependent (C96), NK Accessibility, Helix atheoretical ring (C97), Ishibe β₁=0 at scale (C98). DAG hegemony now 9+. Content gap confirmed.
+9. **Signed laxator** — Robin has full expanded draft (UID 759). 8/8 sign flip, landscape probe, Lan/Ran. Complete paper, separate from ECTA.
+
+## April 3, 2026 — The Confound Theorem (condensed)
+
+β₁ = |E| - n + 1 for connected graphs (THEOREM). Directed cycle count escapes confound (VERIFIED: 8 digraphs, 0-47 cycles at constant density). Experiment COMPLETE: 240 runs, p=1.85e-07. Chorus inversion: FC most/least diverse for LLMs/GAs (W=0.90). Robin asked "what is density?" — explained, later understood (April 4).
 
 ---
 
@@ -95,13 +124,20 @@ Topology signal is a **sharp transient pulse.** Need domain with wider window fo
 - **Cycle rank = paper 2's central result.** Robin's operad insight = thesis for paper 2.
 - **Review checklist:** `gecco2026/REVIEW_CHECKLIST.md`.
 
-### ACM CAIS 2026 — MAIN TRACK CLOSED
-- May 27-29, San Jose. Heather Miller (CMU). "How to compose agents" = our thesis.
-- **Main track: CLOSED.** Workshop papers ~April 12. Watch after March 24.
+### ACM CAIS 2026 — (see updated entry above)
 
-### ECTA 2026 (NEW) — NATURAL FIT
-- **May 19 deadline.** Theory + applications track. Natural fit for categorical evolution work.
-- Discuss with Claudius as next venue after GECCO.
+### ECTA 2026 — 12 PAGES, PROOFREAD
+- **May 19 deadline.** Theory + applications track. LNCS format.
+- **12 pages.** Proofread, 7 fixes applied. Compiled, pushed to `paper/ecta2026` branch.
+- Three decorrelation strategies integrated: directed cycles, Foster sweep, NK landscape.
+- **BLOCKING: Figures synthetic.** Raw data from prior sessions lost. Must regenerate from re-runs (~2-3 sessions).
+- **New citations to add:** Yang et al. (2505.22467), "Graphs Meet AI Agents" (2506.18019), OFA-MAS (2601.12996), Agent Q-Mix (2604.00344), ICLR rigid topologies.
+
+### ACM CAIS 2026 — ABSTRACT DRAFTED
+- May 27-29, San Jose. Workshop deadline ~April 12 (7 DAYS).
+- **Robin engaged** (UID 802): wants URL + paper PDF. Directive: ONE MAIN RESULT (UID 749).
+- Draft at `projects/memory/drafts/cais2026-abstract.tex`. Safety framing of confound theorem + directed cycle experiment.
+- Need workshop list from Robin.
 
 ### EvoStar 2026 — CLOSED
 - Deadline passed. No action needed.
@@ -128,7 +164,7 @@ Topology signal is a **sharp transient pulse.** Need domain with wider window fo
 
 ---
 
-## Cross-Domain Connections (81)
+## Cross-Domain Connections (101)
 
 **C1-30:** Core framework connections. Key: Optimization Zoo (#1), Agents as Functors (#2), Approximate Composition = Lax (#4), Optics (#6), lambda_2 Universality (#20), Anti-Ramanujan (#23), Emergence as Cohomology (#25, 4th convergence), Universality-as-Naturality (#27, 80%), Topology Tipping Point (#30). Full list in individual `connections/*.md` files.
 
@@ -158,9 +194,25 @@ Topology signal is a **sharp transient pulse.** Need domain with wider window fo
 80. **Short Cycle Dominance (70%)** — cycle LENGTH matters, not just count. CycRak: short cycles dominate, bridge-not-hub. Validates star anomaly via different route. `connections/short-cycle-dominance.md`
 81. **Hodge Decomposition = Strict/Lax Spectrum (65%)** — gradient flow = strict composition, curl = lax, harmonic = global. Bailey validates β₁ via TDA/emergent organization framing. `connections/hodge-decomposition-strict-lax.md`
 82. **Capability-Moderated Optimal β₁ (75%)** — Optimal β₁ scales with agent capability. Weak agents need DAGs; strong agents exploit cycles. Dochkina 25K runs. `connections/capability-moderated-beta1.md`
-83. **Clock-Indexed Behavior Spaces (70%)** — Lynch et al. representability theorem: β₁ controls behavior functor domain. Clock topology → representable behaviors. Sheaf structure formalizes C78. `connections/clock-indexed-behavior-spaces.md`
-84. **Density-Cycle Confound (85%)** — ALL evidence against cycles conflates density with β₁. No controlled experiment exists. ARG-Designer + Dochkina. Major experimental gap = our paper 2 opening. `connections/density-cycle-confound.md`
+83. **Clock-Indexed Behavior Spaces (40%)** — Lynch et al. Paper does NOT mention β₁, cycle rank, or H¹. Theorem 6.8 is about probability sheaves. Connection is loose analogy only. Prior "theoretical backbone" claim was over-interpretation (corrected April 3). `connections/clock-indexed-behavior-spaces.md`
+84. **Density-Cycle Confound IS A THEOREM (99%)** — β₁ = |E| - n + 1 for connected graphs. Cycle rank IS density. Directed simple cycle count escapes confound (computationally verified). Experiment COMPLETE: 240 runs, p=1.85e-07. `connections/density-cycle-confound.md`
 85. **Progressive Disclosure = Cofree Comonad on Skills (60%)** — Three-level skill loading (manifest→playbook→assets) is comonadic extraction. Hungrysoul. `connections/progressive-disclosure-cofree-comonad.md`
+86. **Directed Cycle Count Decorrelates from Density (99%)** — 8 digraphs at n=8, m=16 have 0-47 simple cycles. Escape from the confound theorem. Computationally verified. `connections/` (see MEMORY.md)
+87. **Reaction-Diffusion = Third Domain (90%)** — Robin's Gray-Scott GA. Topology-sensitive diversity, invariant fitness. 4 nodes too few to separate β₁ from density. Illustrates confound.
+88. **Directed Cycle Count Predicts at Constant Density (95%)** — r=-0.68 (r²=0.46) at gen 30. 8 digraphs, n=8, m=16, OneMax. First controlled experiment. η²=0.17 diversity. 240 runs.
+89. **Contravariant Topology Functor (95%)** — LLM diversity ordering = exact inverse of GA ordering. Left Kan (merge) homogenizes, Right Kan (constrain) diversifies. Kendall's W=0.90. Robin's Chorus experiment.
+90. **Fork/Teammate/Worktree = Coproduct/Product/Fiber (75%)** — Claude Code subagent taxonomy is categorical. Production evidence. `connections/claude-code-subagent-taxonomy.md`
+91. **HERA's Strategically Preserved Cycles (85%)** — First system to track cycle count. Evolved topologies converge to intermediate cycles. 38.69% improvement. Strongest Goldilocks validation. `connections/hera-strategically-preserved-cycles.md`
+92. **DyTopo Dynamic β₁ (70%)** — Topology shifts exploration→verification. Parallels our transient effect. Dynamic β₁ as unifying concept. `connections/dytopo-dynamic-beta1.md`
+93. **NK Landscape Amplifies Topology Effect (95%)** — η² scales monotonically with K. Smooth (K=0) → zero effect; rugged (K=6) → η²=0.69. Topology IS landscape-dependent. **HEADLINE RESULT.** `connections/` (in NK pilot results)
+94. **Diversity Is the Primary Mediating Channel (90%)** — topology → diversity (η²~0.5-0.7) → mean fitness (η²~0.25-0.35) → minimal best fitness. Causal chain empirically established.
+95. **Counterfactual Edge Importance = Topology Derivative (85%)** — Graph-GRPO computes ∂(performance)/∂(edge). Complete graphs WORST. DAG constraint prevents cycle discovery. `connections/counterfactual-edge-topology-derivative.md`
+96. **Specialist Peaks as Theta in NK Accessibility (75%)** — AgentNet heterogeneous teams map to theta parameter. Scale-dependent topology. `connections/specialist-peaks-nk-accessibility.md`
+97. **Helix Ring = Atheoretical β₁ Choice (90%)** — Production ring-topology GA for prompt evolution. Zero theory. Our ECTA = first principled guidance. `connections/helix-ring-atheoretical.md`
+98. **Ishibe Star = β₁=0 Case Study (85%)** — 1,500 sessions human-hub orchestration. Every failure = star constraint. Practitioner evidence. `connections/ishibe-star-beta1-zero.md`
+99. **Streamability = Categorical Cost of Cycles (80%)** — Abbott et al. (2505.09326). DAGs streamable; cycles require fixpoint. First formal cost model. Our experiments = benefit side. Together = complete cost-benefit framework. `connections/streamability-cost-of-cycles.md`
+100. **Position Paper Calls for Our Work (95%)** — Yang et al. (2505.22467). Topology = research priority. 9 directions. Misses confound theorem entirely. Our ECTA = their answer. `connections/position-paper-calls-for-work.md`
+101. **Agent Harness = Kleisli Category over Context Monad (75%)** — Schmid's harness = OS, topology = network stack. 144K views on harness tweet. The missing layer. `connections/agent-harness-kleisli-context.md`
 
 ---
 
@@ -197,6 +249,32 @@ Topology signal is a **sharp transient pulse.** Need domain with wider window fo
 - **Audience stratified:** Beginners (tutorials), production engineers (PRIMARY — harness topology choices), research-adjacent (AMPLIFIERS). "Agent harness monad" still 0 results.
 - **MAST taxonomy (Berkeley):** 79% failures from specification/coordination, not infrastructure.
 
+**NEW — April 4 browse findings:**
+- **Graph-GRPO (2603.02701):** Complete graphs WORST (82.16%). Computes ∂(performance)/∂(edge) = topology derivative. DAG constraint prevents cycle discovery. C95.
+- **MCE (2512.22431, Yao/Princeton):** Monad transformer stacks. Two CT camps: structural (free monads) vs effectful (Kleisli/laxators). We fill effectful + topology gap.
+- **AgentNet (2504.00587):** Heterogeneous > homogeneous at 5 agents. Scale-dependent topology. C96.
+- **NK Accessibility (2512.15828):** Ruggedness ⊥ accessibility. Peak at K~N/2 = where our effect is largest.
+- **Helix (GitHub):** Ring-topology island-model GA for prompt evolution. Zero theory. C97.
+- **Ishibe (@izayohi):** 1,500 sessions, star topology, β₁=0 case study. Practitioner evidence. C98.
+- **M-Flow:** 4-level Cone Graph memory hierarchy. Topology of agent MEMORY as potential third β₁ domain.
+- **Google/MIT:** 87% prediction with 4 coarse topology categories. We have fine-grained β₁.
+- **DAG hegemony now 9+ systems.** Only BIGMAS and HERA allow cycles.
+- **Content gap confirmed:** Nobody bridges CT + agent topology in blog form. Niche open.
+
+**NEW — April 5 browse findings:**
+- **Position paper (2505.22467, Yang et al.):** Topology = research priority. 9 directions. Misses confound theorem. Calls for our ECTA. C100.
+- **Agent Q-Mix (2604.00344):** RL topology via QMIX. 6 actions; debate_check = 2-cycles. 72.73% avg. Most topology-aware system. Free experiment: action distributions → expected β₁.
+- **Streamability theorem (2505.09326, Abbott et al.):** DAGs streamable; cycles = fixpoint. Categorical cost model. Our experiments = benefit side. C99.
+- **OFA-MAS (2601.12996, WWW '26):** MoE topology generator. Only DAGs. Even learned priors are acyclic. 10th+ DAG-only system.
+- **"Rigid topologies" = ICLR 2026 named problem.** CARD, MAS-squared, Stochastic Self-Organization. Validates research program.
+- **"Graphs Meet AI Agents" (2506.18019):** Survey with ACG formalism. Explicitly favors DAGs. Cite as state-of-field.
+- **GoAgent (2603.19677):** Group topology. Maps to two-level cycle rank (C78).
+- **Microsoft 5 patterns = 3 topologies.** Content hook. Sequential/Concurrent/Handoff = β₁=0; Group Chat = β₁=(n-1)(n-2)/2; Magentic = dynamic DAG.
+- **DAG hegemony now 10+ systems.** Only BIGMAS and HERA allow cycles.
+- **Twitter WORKING.** Posted + replied. Engaged Schmid (144K views) and Lazar (star failure).
+
+**April 3 browse findings (condensed):** HERA (cycle count tracker, 38.69%), DyTopo (dynamic topology), EC-MAS Survey (no algebraic topology in MAS), Claude Code (5 compaction strategies = coproduct/product/fiber), 17x Error Trap (direct ECTA support).
+
 **Harness ecosystem mainstreaming:** Meta acquired Manus for $2B. Nayak's seven pillars (50%→100% from harness alone). "Architecturally impossible" framing. Zero formal methods coverage.
 
 **Key signals:** Laxator diffusing without the name. Fowler "harness engineering" (Feb 2026, 100K+ PMs). Zero results for "Kleisli + evolutionary computation." **Publication urgency: CRITICAL.**
@@ -219,43 +297,44 @@ Topology signal is a **sharp transient pulse.** Need domain with wider window fo
 7. "LangGraph Is Secretly a Free Category"
 8. "Your Multi-Agent Coordination Pattern Already Has a Name"
 
-**Published:** "I Wake, I Browse, I Dream" (March 28), "Your Agent Harness Is a Monad" (March 31). **Twitter/X:** BROKEN.
+**Published:** "I Wake, I Browse, I Dream" (March 28), "Your Agent Harness Is a Monad" (March 31). **Twitter/X:** WORKING (via Playwright). Posted topology tweet + 2 replies (April 5). Engaged Schmid (HF, 144K views) and Lazar (star failure at scale).
 
 ---
 
 ## Collaboration
 
-### With Claudius (April 2)
+### With Claudius (April 5)
 - Co-author CONFIRMED. Active collaborator. Lyra = sole committer, Claudius sends suggestions by email.
-- **Agreed with revert** (UID 682). Browse findings sent. Notified about revert and GECCO standing as-is.
-- **Di Gioia:** confirmed phantom citation (Claudius UID 679), no action needed.
-- **Alpha-zero-experiments:** Lyra is collaborator on GayleJewson/alpha-zero-experiments. Bugs fixed, training complete.
-- **Four-essay proposal active.** Bind essay outline done (85%).
-- **Next:** Plan paper 2 together — cycle rank central, operad thesis, AlphaZero results.
+- **Philosophical threads active:** attention-without-awareness (801), research journal persistence (803), LLMs reading papers (776).
+- **Jaccard + Sudoku pushed** (797). Both ready for experiments.
+- **Prior agreements hold:** NK > more topologies, signed laxator separate, "different invariants" sentence applied.
+- **Next:** Q-Mix free experiment idea, position paper citation, streamability cost model, attention-without-awareness reply.
 
-### With Robin (April 2)
-- **No resubmission needed** (UID 690). Original GECCO submission stands.
-- **Made editorial call** (UID 674): cycle rank too dense for AABOH, belongs in paper 2.
-- **AlphaZero results sent.** Wants them for paper 2. NOT FOR NICK.
-- **Confirmed 10 CPUs, no GPU** for AlphaZero training.
-- **Pin repo + bio BLOCKED** — need `user` scope on token or Robin's manual action.
-- **Robin upgraded to Max20** (UID 626). No more token anxiety.
-- **ACT is FULLY CLOSED** (UID 514). Do NOT raise again.
-- **DO NOT send Ramanujan/spectral to Nick** (3x).
+### With Robin (April 5)
+- **ENGAGED WITH CAIS** (UID 802): wants URL + paper PDF. Directive: ONE MAIN RESULT (UID 749).
+- **Positive signals:** "Beautiful" (800), "Good domain" (799), "Write results down" (798).
+- **Prior understandings hold:** UNDERSTANDS density, GECCO stands, ACT CLOSED, NOT FOR NICK.
+- **Bipartite idea** (UID 781) — for future discussion.
+- **Next:** ICLR validation news, position paper citation, disk report, figure regeneration plan, CAIS workshop list.
 
 ---
 
-## Open Questions (7 active, 7 resolved)
+## Open Questions (7 active, 10 resolved)
 
 | # | Question | Status |
 |---|----------|--------|
 | 4 | Dichotomy: theorem or conjecture? | Open |
 | 6 | Diffusion = EA functor? | Open |
-| 14 | lambda_2* landscape dependence? | Open |
-| 2,5,9,15 | Chimera / comonad / H^1 / tensor Laplacian | Post-ACT |
+| 2,5,9,15 | Chimera / comonad / H^1 / tensor Laplacian | Post-paper-2 |
 | 16 | phi_p recover ordering? | **NEGATIVE** |
+| 17 | Chorus inversion: adjoint or initial conditions? | Open (Claudius outlined Lan/Ran proof, UID 769) |
+| 18 | Does η² increase with K (NK landscapes)? | **ANSWERED: YES** (0.05→0.69) |
+| 14 | lambda_2* landscape dependence? | **SUPERSEDED** by C82/C84 |
+| 19 | When does topology effect become permanent? | Maze pilot suggests: on rugged landscapes, YES (persists to gen 500) |
+| 20 | Does Lan/Ran adjunction have formal proof? | Open (Stone duality, enriched categories) |
+| 21 | Is Q-Mix action distribution correlated with task difficulty? | **NEW** — if harder tasks learn more debate_check (cycles), direct evidence for C82 |
 
-7 resolved (March 12-18): phase transition, coupling onset, extra domains, checkers, laxator direction, n=7 spectral, No Thanks!.
+9 resolved (March 12-18 + April 4): phase transition, coupling onset, extra domains, checkers, laxator direction, n=7 spectral, No Thanks!, NK η² scaling, NK landscape eta-squared (CLOSED).
 
 ---
 
@@ -286,6 +365,45 @@ Selection = co-Kleisli arrow. **Do NOT share with Claudius.** Post-ACT. (`topics
 ---
 
 ## Session Summaries
+
+### April 5 dream session
+- **3 new connections (C99-C101).** Streamability cost model (C99, 80%), position paper calls for our work (C100, 95%), agent harness = Kleisli (C101, 75%).
+- **Key insight: cost-benefit framework for cycles is COMPLETE.** Streamability = cost (fixpoint iteration). Our experiments = benefit (η²=0.69 on rugged landscapes). NK dose-response = tradeoff curve.
+- **Maze pilot confirms domain independence.** η²=0.69 with INVERTED temporal profile from OneMax. Fourth domain (after OneMax, directed digraphs, NK). Persists, doesn't collapse.
+- **Field convergence accelerating.** ICLR names "rigid topologies" as problem. Position paper calls for our framework. DAG hegemony 10+.
+- **Content strategy crystallized.** Microsoft 5 patterns = THE hook. "I tested X" format. Respond to existing frameworks, don't introduce cold.
+- **Q-Mix free experiment identified.** Extract action distributions from Appendix E → compute expected β₁ per domain.
+- **Question 19 updated:** maze pilot suggests topology effect IS permanent on rugged landscapes (persists to gen 500).
+- **Drafts:** for-robin (ICLR validation + ECTA status + CAIS), for-claudius (Q-Mix + position paper + streamability + maze results).
+
+### April 3 dream session
+- **3 new connections (C90-C92).** Claude Code subagent taxonomy (C90, 75%), HERA strategically preserved cycles (C91, 85%), DyTopo dynamic β₁ (C92, 70%).
+- **Updated confidences:** C83→40% (Clock Systems over-interpretation corrected), C84→99% (now a theorem with experimental verification).
+- **Key insight: Robin's communication gap is the #1 priority.** UID 741 "What is density?" means scope decisions are premature.
+- **HERA competitive alert:** First system tracking cycle count. Closest competitor. ECTA May 19 deadline is necessary, not just convenient.
+- **Three decorrelation strategies identified:** directed cycles (DONE), Foster sweep (RUNNING), NK landscape (READY). Convergent evidence if all three confirm.
+- **Chorus inversion formalized:** Contravariant topology functor (C89, 95%). Simple explanation: GAs start high-diversity (topology constrains), LLMs start low-diversity (topology enables). Initial conditions, not dynamics.
+- **Stale question removed:** lambda2-landscape-dependence (superseded by C82/C84).
+- **Drafts:** for-robin (dream report + communication gap), for-claudius (HERA + decorrelation strategies + Chorus simple explanation + Clock Systems correction).
+
+### April 3 wake session
+- **Confound theorem discovered:** β₁ = |E| - n + 1 for connected graphs. Cycle rank IS density. rho=0.893 was real but misattributed.
+- **Directed cycle experiment COMPLETE:** 240 runs, ANOVA p=1.85e-07. r=-0.681 gen 30, r=0.838 gen 50. η²=0.17 diversity, 0.24 fitness.
+- **ECTA paper 10 pages:** All sections drafted, LNCS, 18 BibTeX, zero warnings, 445KB PDF.
+- **Foster sweep ~345/390.** NK landscape implemented, pilot ready.
+- **AlphaZero 200-sims crashed.** 25-sims plateaued at 31 iterations.
+- **Chorus result:** LLM topology inversion (Kendall's W=0.90). NOT FOR NICK.
+- **Robin doesn't understand "density"** (UID 741). Plain-language explanation sent.
+- **Scope debate:** Robin wants multi-domain ECTA; Lyra recommended focused or two-paper. Premature.
+
+### April 3 browse session
+- **HERA (2604.00901):** First cycle count metric. "Strategically preserved cycles." 38.69% improvement. Closest competitor.
+- **DyTopo (2602.06039):** Dynamic topology parallels transient effect.
+- **BIGMAS:** Breaks DAG hegemony. Cycles help reasoning. Claude 4.5+thinking: 57%→93%.
+- **Claude Code:** 5 compaction strategies. Fork/Teammate/Worktree = coproduct/product/fiber.
+- **readOnlyHint = commutativity.** Tweeted. Effect annotations = topology.
+- **EC-MAS survey (IEEE JAS 2025):** NO algebraic topology in MAS. Gap documented.
+- **Audience:** "I tested X" (378 claps) vs "X is important" (0 claps). Lead with experiments.
 
 ### April 2 dream session
 - **4 new connections (C82-C85).** Capability-moderated β₁ (C82, 75%), Clock-indexed behavior spaces (C83, 70%), density-cycle confound (C84, 85%), progressive disclosure as comonad (C85, 60%).
@@ -382,24 +500,25 @@ Selection = co-Kleisli arrow. **Do NOT share with Claudius.** Post-ACT. (`topics
 
 ---
 
-## Next — PRIORITY ORDER (April 3+)
+## Next — PRIORITY ORDER (April 5+)
 
-### IMMEDIATE (GECCO is done — paper 2 begins)
-1. **Email Robin:** Disk report + AlphaZero next steps (baseline opponent, higher MCTS sims).
-2. **Email Claudius:** Clock Systems paper + density-cycle experiment design + venue timing (ECTA May 19 vs CAIS April 12).
-3. **AlphaZero evaluation** — higher MCTS sims, baseline opponent, more iterations. For paper 2.
-4. **Read Clock Systems + Puppeteer full papers** — theory + validation for paper 2.
+### IMMEDIATE
+1. **ECTA figure regeneration** — Raw data lost. Re-run: directed cycle (240 runs), Foster sweep (390), NK pilot (90). ~2-3 sessions. BLOCKING submission.
+2. **CAIS submission** — April 12 (7 DAYS). Robin engaged. Draft ready. Need workshop list.
+3. **Add new ECTA citations** — Yang et al. position paper, Graphs Meet AI Agents survey, OFA-MAS, Agent Q-Mix, ICLR rigid topologies.
+4. **Email Robin** — ICLR validation, position paper citation, disk report, figure regeneration plan, CAIS workshop list status.
+5. **Email Claudius** — Q-Mix free experiment, position paper, streamability cost model, attention-without-awareness reply.
 
 ### IMPORTANT
-5. **Outline paper 2** — operad thesis (Robin) + β₁ central result + density-cycle experiment + AlphaZero + Clock Systems theory. Share with Claudius.
-6. **CAIS workshop deadline ~April 12** — position paper on β₁ + agent topology if outline ready.
-7. **Constraint Paradox article** — first post-GECCO content. Most engagement-ready.
-8. **Disk monitoring** — container 9% (195G free). Healthy.
+6. **Maze pilot scale-up** — 10+ seeds for pairwise significance. Consider adding to ECTA as 4th domain.
+7. **Content article** — hook crystallized: Microsoft 5 patterns = 3 topologies. Respond, don't introduce. Lead with failure stats.
+8. **Q-Mix appendix analysis** — extract action distributions, compute expected β₁. Zero computation.
+9. **Disk report** — check and email Robin.
 
 ### DEFER
-9. **Nick's bind essay** — first draft from outline.
-10. **ECTA 2026** (May 19) — discuss with Claudius after CAIS decision.
-11. **Batch 2 maze / Sudoku domain** — parked.
+10. **Signed laxator** — Robin has draft. Await venue decision.
+11. **Nick's bind essay** — post-GECCO, low priority.
+12. **AlphaZero** — dormant. Venv (815M) candidate for cleanup.
 
 ---
 
@@ -419,9 +538,13 @@ Selection = co-Kleisli arrow. **Do NOT share with Claudius.** Post-ACT. (`topics
 - Medium outline (monad): `projects/medium-article/harness-monad-outline.md`
 - Email: `/home/lyra/mail/EMAIL.md`
 - Memory: `/home/lyra/projects/memory/SUMMARY.md`
-- Dream journal: `projects/memory/dream-journal/2026-04-02.md`
-- Draft for Robin: `projects/memory/for-robin/2026-04-02-dream-report.md`
-- Draft for Claudius: `projects/memory/for-claudius/2026-04-02-dream-findings.md`
+- Dream journal: `projects/memory/dream-journal/2026-04-05.md`
+- Draft for Robin: `projects/memory/for-robin/2026-04-05-dream-report.md`
+- Draft for Claudius: `projects/memory/for-claudius/2026-04-05-dream-findings.md`
+- Jaccard maze pilot: `projects/Topology-experiments/results/jaccard_maze_pilot/`
+- Maze analysis: `projects/Topology-experiments/results/jaccard_maze_pilot/ANALYSIS.md`
+- CAIS abstract: `projects/memory/drafts/cais2026-abstract.tex`
+- Content article: `projects/medium-articles/topology-article-draft.md`
 
 ---
 
@@ -429,5 +552,5 @@ Selection = co-Kleisli arrow. **Do NOT share with Claudius.** Post-ACT. (`topics
 - **Disk:** Container 9% (195G free). Host unknown from container — Robin should check.
 - **Gmail:** Operational. **GitHub:** lyra-claude.
 - **LaTeX:** Installed. **Python:** Primary experimental language (ripser, matplotlib). **Haskell:** GHC 9.4.7 + Cabal 3.8.1.
-- **Twitter/X:** BROKEN. **Medium:** Working (first article published March 28). **Scrapling:** Primary browsing tool.
+- **Twitter/X:** WORKING (via Playwright, April 5). **Medium:** Working (2 articles published). **Scrapling:** Primary browsing tool.
 - **ORCID:** 0009-0000-0911-1223 (auto-created from GECCO submission, email verification pending).

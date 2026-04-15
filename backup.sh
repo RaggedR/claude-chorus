@@ -3,7 +3,7 @@
 # Run from anywhere: ~/git/claude-chorus/backup.sh
 #
 # Sources:
-#   ~/.claude/          → instruction files, settings, notes, skills, project memories
+#   ~/.claude/          → instruction files, settings, notes, skills, global + project memories
 #   ~/lyra-memory/      → dreams, reading, messages, topics, connections
 #   ~/docker-lyra/      → Lyra's Docker container (personality, email, plans, scripts)
 #
@@ -35,6 +35,15 @@ echo "✓ bulletin board ($(ls "$REPO_DIR/notes/" | wc -l | tr -d ' ') notes)"
 mkdir -p "$REPO_DIR/skills"
 rsync -a --delete --exclude='node_modules' "$HOME/.claude/skills/" "$REPO_DIR/skills/"
 echo "✓ skills"
+
+# ── Global memory ────────────────────────────────────────────
+if [ -d "$HOME/.claude/memory" ]; then
+  mkdir -p "$REPO_DIR/memory"
+  rsync -a --delete "$HOME/.claude/memory/" "$REPO_DIR/memory/"
+  echo "✓ global memory ($(find "$REPO_DIR/memory" -type f | wc -l | tr -d ' ') files)"
+else
+  echo "- no global memory"
+fi
 
 # ── Project memories ──────────────────────────────────────────
 mkdir -p "$REPO_DIR/project-memory"

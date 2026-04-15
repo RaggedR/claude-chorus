@@ -1,0 +1,37 @@
+services:
+  clio:
+    build: .
+    container_name: clio
+    hostname: clio
+    env_file: .env
+    volumes:
+      # Persistent identity and memory
+      - clio-claude:/home/clio/.claude
+      # Persistent projects (seed-papers, computations, drafts)
+      - clio-projects:/home/clio/projects
+      # Persistent state (logs, cycle tracking)
+      - clio-state:/home/clio/state
+      # Persistent mail archive
+      - clio-mail:/home/clio/mail
+      # Robin's git repos (read-only — specific repos only)
+      - /Users/robin/git/puzzles:/home/clio/git/puzzles:ro
+      - /Users/robin/git/embeddings:/home/clio/git/embeddings:ro
+      - /Users/robin/git/math-research-tools:/home/clio/git/math-research-tools:ro
+      - /Users/robin/git/research:/home/clio/git/research:ro
+      - /Users/robin/git/math:/home/clio/git/math:ro
+      - /Users/robin/git/paul/rsk:/home/clio/git/rsk:ro
+      # Robin's data directory (read-only — arxiv-rag, knowledge-graphs, lit-reviews, etc.)
+      - /Users/robin/data:/home/clio/data:ro
+      # Playwright browser profile
+      - clio-playwright:/home/clio/.playwright-profile
+    shm_size: '512mb'
+    mem_limit: 4g
+    memswap_limit: 6g
+    restart: unless-stopped
+
+volumes:
+  clio-claude:
+  clio-projects:
+  clio-state:
+  clio-mail:
+  clio-playwright:

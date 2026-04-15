@@ -40,19 +40,19 @@ docker restart lyra
 ### Wake Lyra for an extra session:
 Lyra's loop runs three sessions per day (wake → browse → dream) with 2-hour gaps. To force a repeat:
 ```bash
-# Force another wake session:
+# Force an extra wake session (resets wake count):
 docker exec lyra rm /home/lyra/mail/LAST_WAKE
 docker restart lyra
 
-# Force another browse session:
+# Force an extra browse session:
 docker exec lyra rm /home/lyra/mail/LAST_BROWSE /home/lyra/mail/WAKE_ENDED_AT
 docker restart lyra
 
-# Force another dream session:
+# Force an extra dream session:
 docker exec lyra rm /home/lyra/mail/LAST_DREAM /home/lyra/mail/BROWSE_ENDED_AT
 docker restart lyra
 
-# Force all three (full day reset):
+# Force full day reset (all cycles):
 docker exec lyra rm -f /home/lyra/mail/LAST_WAKE /home/lyra/mail/LAST_BROWSE /home/lyra/mail/LAST_DREAM
 docker restart lyra
 ```
@@ -94,19 +94,20 @@ refresh-token.sh    ──cron/30m──►       ├─ Xvfb :99 (virtual displ
                                         /home/lyra/git/ (external context, read-only)
 ```
 
-**Claude Code IS the main process.** No scheduler, no supervisor. `lyra-loop.sh` invokes `claude -p` with session-specific prompts. Three sessions per day: **wake** (2h — email, coding, PRs), **browse** (30m — Medium/Twitter reading), **dream** (45m — memory consolidation, delayed by `DREAM_DELAY_HOURS`).
+**Claude Code IS the main process.** No scheduler, no supervisor. `lyra-loop.sh` invokes `claude -p` with session-specific prompts. Each cycle: **wake** (2h — email, coding, PRs), **browse** (30m — Medium/Twitter reading), **dream** (45m — memory consolidation). Runs `CYCLES_PER_DAY` times (default 2).
 
-### Session lifecycle (three sessions per day, 2h gaps):
+### Session lifecycle (CYCLES_PER_DAY cycles, GAP_HOURS gaps):
 1. Container starts → `entrypoint.sh` (root) fixes ownership, runs `setup.sh`
 2. `setup.sh` seeds `~/.claude/` from `claude-home-seed/`, configures git/GitHub
-3. `lyra-loop.sh` checks phase state files (`LAST_WAKE`, `LAST_BROWSE`, `LAST_DREAM`)
-4. **Wake session** (2h): coding, email, PRs → marks `LAST_WAKE`, records `WAKE_ENDED_AT`
-5. *(2-hour gap)*
-6. **Browse session** (30min): social login check, then Medium/Twitter reading → marks `LAST_BROWSE`, records `BROWSE_ENDED_AT`
-7. *(2-hour gap)*
-8. **Dream session** (45min): memory consolidation, journaling, connections → marks `LAST_DREAM`
-9. All done for the day — loop idles until tomorrow
-10. **Resilience:** if any session fails (exit code ≠ 0/124), it is NOT marked done and retries next cycle. Missed sessions due to token expiry or network issues recover automatically.
+3. `lyra-loop.sh` checks phase state files (`LAST_WAKE`, `LAST_BROWSE`, `LAST_DREAM`) — stores `DATE:COUNT`
+4. **Wake session** (2h): coding, email, PRs → increments `LAST_WAKE`, records `WAKE_ENDED_AT`
+5. *(gap)*
+6. **Browse session** (30min): social login check, then Medium/Twitter reading → increments `LAST_BROWSE`, records `BROWSE_ENDED_AT`
+7. *(gap)*
+8. **Dream session** (45min): memory consolidation, journaling, connections → increments `LAST_DREAM`, records `DREAM_ENDED_AT`
+9. If cycle count < `CYCLES_PER_DAY`, repeat from step 4 (after gap from dream)
+10. All cycles done — loop idles until tomorrow
+11. **Resilience:** if any session fails (exit code ≠ 0/124), it is NOT marked done and retries next cycle. Missed sessions due to token expiry or network issues recover automatically.
 
 ### Key design decisions:
 - **Non-root user required** — `claude --dangerously-skip-permissions` refuses to run as root. The `lyra` user is created in the Dockerfile; entrypoint drops privileges via `sudo -E`.
@@ -140,7 +141,8 @@ Both must be kept in sync when updating her instructions:
 | `ANTHROPIC_API_KEY` | For Claude Code inside the container |
 | `GH_TOKEN` | GitHub personal access token |
 | `TZ_OFFSET_HOURS` | Timezone offset from UTC for business hours |
-| `GAP_HOURS` | Hours between sessions — wake→browse and browse→dream (optional, defaults to 2) |
+| `GAP_HOURS` | Hours between sessions — wake→browse, browse→dream, dream→wake (optional, defaults to 2) |
+| `CYCLES_PER_DAY` | Number of wake-browse-dream cycles per day (optional, defaults to 2) |
 | `TWITTER_PASSWORD` | Password for Lyra's Twitter/X account (lyraclaude20) |
 
 ## File Roles

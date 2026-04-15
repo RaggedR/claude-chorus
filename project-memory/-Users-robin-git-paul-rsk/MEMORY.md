@@ -83,11 +83,31 @@ Train a deep neural network to learn the RSK correspondence, improving on the PN
 - **Epoch timings vary wildly** on MPS (21 min to 4.6 hours for same epoch count) due to thermal throttling. Don't assume fixed epoch times.
 - **Current limitation**: Single winding only (k=0). Depth > 0 would require rotation operator σ (not implemented).
 
-## Phase 6: Sparse Autoencoder Interpretability — PLANNED
+## Phase 6: Sparse Autoencoder Interpretability — IN PROGRESS
 - **Goal**: "See" the local rules — determine whether the transformer has learned internal representations that correspond to Schensted insertion / Burge local rule steps.
-- **Approach**: Train SAEs on residual stream activations at each of the 6 transformer layers. For n=10 model (100% accuracy, 20 tokens × 128 dims), look for features that correlate with reverse bumping steps.
-- **Key insight**: 100% accuracy means the model has provably learned a correct algorithm. SAE features should decompose that algorithm into interpretable components.
-- **Robin's interest**: He wants to *see* the local rules. His thesis (§4.2) defines local rules as higher-order functions — if the transformer learns analogous structure, that's a finding about how transformers implement mathematics.
+- **Infrastructure**: SAEs trained on all 7 hook points (embed, layers 0-5, pool) of the n=10 model. TopK=32, d_dict=1024. 50K samples of activations collected. Code in `paul/sae/sae.py` and `octopus-streams/rsk/`.
+- **Prior findings** (from `octopus-streams/rsk/results/06_report.md`):
+  - Layer 2 is the critical computation layer (ablating it crashes accuracy to 62%)
+  - Cylindric model attention concentrates on local rule triples at 2.5-3.7× baseline
+  - Layers 4-5 are idle — computation complete by layer 3
+  - Model parallelizes across heads, NOT sequential layer→depth mapping
+
+### SAE Feature Findings (2026-04-03, per-step bumping path analysis)
+- **Key methodological fix**: aggregate bumping path correlation is trivially 1.0 (every P-token is on some path). Must test PER-STEP: for each of the n inverse RSK steps, which features fire on that step's specific bumping path?
+- **Analysis script**: `paul/sae/find_features.py` — loads pre-trained SAEs, runs per-step lift computation
+
+**Two families of features found at layer 2:**
+
+1. **Insertion-order detectors** (features 165, 599, 41, 415 etc.): Monotonically increasing lift from step 0 → step 9, e.g. `[0.3, 0.4, 0.5, 0.6, 0.7, 1.0, 1.3, 1.9, 3.0, 10.0]`. These fire most on cells inserted earliest during forward RSK (step 9 removes Q-entry 1 = the first cell added). Feature 165 fires exclusively on val=1, r=0, c=0 in P — the insertion root.
+
+2. **Step-specific Q-entry locators** (features 237, 347, 244): Fire ONLY at specific steps. Feature 237 fires at steps 6-7 on Q[2,0] with val=3. Feature 347 fires only at step 7 on Q[2,0] with val=4. These detect "Q-entry k is at position (r,c)" — telling the inverse RSK algorithm where to begin reverse bumping for that step. Cleanly monosemantic.
+
+**Interpretation**: The model implements a hybrid of Schensted's sequential algorithm and growth diagram parallel structure. Q-locators identify which step to compute; insertion-order detectors track the chronological structure. Both are necessary and both are clean.
+
+**Still TODO**:
+- Causal intervention: zero individual features and measure accuracy impact
+- Cross-task comparison: do similar features appear in RPP/cylindric SAEs?
+- Formal writeup for paper
 
 ## Documentation Updates — DONE (2026-03-19)
 - README.md, hf_model_card.md, paper.tex all updated with Experiment 4 (cylindric) results
@@ -97,8 +117,15 @@ Train a deep neural network to learn the RSK correspondence, improving on the PN
 
 ## PNNL Collaboration
 - Henry Kvinge (PNNL) replied to Robin's email (2026-03-18). They will link our work from their GitHub/HuggingFace.
-- Their paper (arXiv:2503.06366): none of their models learned inverse RSK ("results similar or worse than simply guessing the mean")
-- They acknowledge data representation is "extremely important" and are writing a paper on permutation representations
+- Their benchmark paper (arXiv:2503.06366): none of their models learned inverse RSK ("results similar or worse than simply guessing the mean")
+- **Scullen et al. (ICML MOSS 2025)**: "Permutations as a testbed for studying the effect of input representations on learning" — the representation paper Kvinge mentioned. Studies 5 encodings × 12 tasks on S₅ and S₈. None use 2D tableau structure. Their finding: representation affects data efficiency. Our finding is sharper: representation determines learnability vs non-learnability. Now cited in our paper.tex.
+
+## Publication Strategy (2026-04-03)
+- **Target venue**: TMLR (rolling deadline, accepts "interesting findings" papers)
+- **Key framing for ML audience**: "Structured embeddings encoding problem geometry determine learnability, not just efficiency"
+- **Embedding ablation sweep**: implemented (`--ablate` flag in train.py). 6 variants: drop-row, drop-col, drop-tab, drop-row-col, 1d-pos, concat. Sweep script: `run_ablation_sweep.sh`.
+- **Still needed for TMLR**: multiple seeds, learning curves, error analysis at n=15
 
 ## Saved Papers
 - `dobner-cylindric-rsk-2603.09119.pdf` — Dobner (March 2026), RSK analogue for cylindric tableaux. Directly relevant to Robin's cylindric plane partition work. Potential future extension of the ML approach.
+- `58_Permutations_as_a_testbed_f.pdf` — Scullen et al. (ICML MOSS 2025), representation effects on permutation learning. Validates our core thesis.

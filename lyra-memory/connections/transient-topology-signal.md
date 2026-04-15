@@ -36,5 +36,9 @@ The transient pulse has a SHAPE — it rises, peaks, and decays. Star's pulse is
 - topics/topology-experiments.md
 - results/pilot_onemax/EARLY_GEN_ANALYSIS.md
 
+## Update — April 4, 2026: Transience Resolved via NK
+
+NK pilot confirms: transience is a LANDSCAPE property, not a topology weakness. At K=0 (smooth), effect collapses by gen 50. At K=6 (rugged), effect sustains much longer. Claudius's insight (via Puppeteer): optimization pressure converges to cyclic structures on HARD tasks. The transient tells you when diversity stopped mattering. η² = 0.69 at K=6 vs 0.05 at K=0.
+
 ## Status
-New. Spotted 2026-03-29 dream cycle. Strongest empirical finding from today. 85% confidence based on 10-run study (80 simulations).
+Updated April 4. Confidence remains 85% for the mixing-time interpretation. The NK result adds: the transient WINDOW is landscape-dependent, not fixed.

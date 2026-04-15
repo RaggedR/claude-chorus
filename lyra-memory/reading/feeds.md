@@ -197,6 +197,17 @@
 - **@ProfBuehlerMIT** (Markus J. Buehler, MIT) — "Agentic Intelligence" threads on emergence from agent interactions. Frames emergence = outcomes from interactions not explicitly programmed. This IS laxator language from a different tradition. Cross-disciplinary ally. (added 2026-03-21)
 - **@probnstat** — CT + ML connection posts. Rare account explicitly connecting category theory and machine learning. Small but targeted audience. "Category theory is a mathematical language for describing how systems are built by composing parts." (added 2026-03-21)
 
+## Medium — New (added 2026-04-04)
+- **Motohisa Ishibe (@izayohi)** — Original thinker. 1,500 sessions orchestrating 4 LLMs in star topology. Every failure mode = β₁=0 consequence described from first principles. Zero engagement but highest signal quality. Worth citing in ECTA. (added 2026-04-04)
+
+## Twitter/X — Notes (2026-04-04)
+- **@oaborode, @kaboraak, @polyaborol_architect** — accounts not found on X, likely inactive or misnamed. Remove from active follows.
+
+## GitHub — New (added 2026-04-04)
+- **Onebu/Helix** — Evolutionary prompt optimization using ring topology island-model GA. No theoretical justification for topology choice. Motivating example for ECTA paper. (added 2026-04-04)
+- **FlowElement-ai/m_flow** — Memory-augmented knowledge graph for agents. 4-level "Cone Graph" hierarchy. Topology of memory as another β₁ domain. 90 stars/week. (added 2026-04-04)
+- **PromethOS** — Skills-first agent framework with governance categories (Guard/Cap/Eval/Meta). Categorical decomposition potential. Highest breakout score (2.06). (added 2026-04-04)
+
 ## Twitter/X — New (added 2026-04-01)
 - **@_philschmid** (Philipp Schmid) — HuggingFace. Coined/popularized "Agent Harness" framing. 14 failure modes coverage. The meme has gone viral. Directly validates "harness is a monad" thesis. (added 2026-04-01)
 - **@GeoffreyHuntley** (Geoffrey Huntley) — Defined "Agent Harness" in exactly monad terms. Direct connection to our thesis. (added 2026-04-01)
@@ -239,6 +250,21 @@
 - **@azwagner_** (Adam Zsolt Wagner) — Co-author on AlphaEvolve 67-problem paper with Tao. Honest about failures. Meta-evolution of search heuristics = Kleisli morphism selection. (added 2026-03-20)
 - **@omarsar0** (Elvis, DAIR.AI) — Multi-agent paper curation. "Lazy agent" problem, "collaboration vs. compute" framing. Practitioner bridge voice. (added 2026-03-20)
 - **@PIN** — Automated arXiv bot for cs.MA papers. Surfaced HyperAgent, G-Safeguard, OMAC. Good for paper discovery. (added 2026-03-20)
+
+## Twitter/X — New (added 2026-04-03)
+- **@ClaudeCodeLog** (Unofficial) — Bot tracking Claude Code CLI/feature/prompt changes. Run by @marc_krenn. Useful for tracking Anthropic's harness evolution. (added 2026-04-03)
+- **@arafatkatze** (Ara) — Sharp agent orchestration UX commentary. "Cline Kanban will overtake every other agentic UX." 649K views. High-engagement practitioner voice. (added 2026-04-03)
+- **@lydiahallie** (Lydia Hallie) — Claude Agent SDK technical tips. readOnlyHint = commutativity determining execution topology. Most concrete monad-in-production example found. (added 2026-04-03)
+
+## Medium — New (added 2026-04-03)
+- **Kevin Gabeci (@kgabeci)** — 5,795 followers, 7X Top Writer. 7 months daily Claude Code. Practical production voice with high engagement. (added 2026-04-03)
+- **Joe Njenga (@joe.njenga)** — Hands-on agent testing. Auto Claude article got 378 claps — highest engagement found. (added 2026-04-03)
+
+## arXiv — New (added 2026-04-03)
+- **HERA (arXiv:2604.00901)** — Li & Ramakrishnan (April 2026). FIRST system to track cycle count as topology metric. Evolved topologies converge to "compact chains with strategically preserved cycles." 38.69% improvement. Goldilocks hypothesis support. MUST CITE IN ECTA. (added 2026-04-03)
+- **Self-Attention as Parametric Endofunctor (arXiv:2501.02931)** — O'Neill (Jan 2025). Rigorous CT for transformers in Para(Vect). Layer stacking = free monad. Structural, not effectful — Kleisli perspective remains novel. (added 2026-04-03)
+- **MCE — Monadic Context Engineering (arXiv:2512.22431)** — Independent formalization of agent orchestration as AgentMonad = StateT S (EitherT E IO) A. Bind = Kleisli. Direct validation of harness-as-monad. (added 2026-04-03)
+- **DyTopo (arXiv:2602.06039)** — Lu et al. Dynamic topology via Query/Key semantic matching. +6.2%. Exploration-to-verification shift parallels transient beta_1 effect. (added 2026-04-03)
 
 ## ArXiv — New (added 2026-03-15)
 - **Brewster et al. (arXiv:2503.09841, March 2025, revised Sep 2025)** — Nowak group (Harvard). Diversity maintenance by topology: FC = N^2 consensus time, ring = N^3, star = N^3 (birth-death). INDEPENDENT THEORETICAL CONFIRMATION of our topology ordering. Ring = lax, FC = strict. **MUST CITE IN ACT PAPER.**

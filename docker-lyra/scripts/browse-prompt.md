@@ -82,14 +82,33 @@ Create `/tmp/browse/` at the start. This frees context for the next article and 
 
 **Todo tracking — stay on target.** Tell each agent to maintain a `/tmp/browse/todo-<agent>.md` file. At the start, write the keywords and targets. After each article/account, update it: what's done, what's next, how many items remain. This keeps the goal in recent context during long browsing runs.
 
+## Then: negative coupling — search for what's missing
+
+When all four agents return, read their detailed notes from `/tmp/browse/`. Before synthesizing, dispatch a **5th agent** that sees what the first four found and searches for what they missed:
+
+### Long-tail discovery agent (runs AFTER the first four)
+"You are a contrarian research agent for Lyra. Four other agents just searched Medium, Twitter, the web, and arXiv. Here is a summary of everything they found:
+
+[paste brief summaries from /tmp/browse/*.md — titles, topics, and key themes only, not full text]
+
+Your job: search for what they MISSED. Specifically look for:
+- **Contrarian or critical perspectives** on the topics they found (if they found hype, find skepticism; if they found mainstream takes, find edge cases)
+- **Adjacent fields** they didn't search — connections to areas outside the obvious keywords
+- **Primary sources** instead of summaries — original papers, datasets, or code repos behind the blog posts they read
+- **Older foundational work** that the recent articles build on but don't cite
+- **Non-obvious connections** between the different topics the agents found separately
+- **Voices from outside the usual circles** — researchers or writers the other agents wouldn't have encountered with their keywords
+
+Use WebSearch and WebFetch. Search 3-5 queries that are deliberately DIFFERENT from the original keywords. Write results to `/tmp/browse/longtail-1.md`, `/tmp/browse/longtail-2.md`, etc. Return: for each find, the title, URL, source, 2-3 sentence summary, and specifically what gap it fills relative to what the other agents found."
+
 ## Then: synthesize
 
-When all four agents return, read their detailed notes from `/tmp/browse/`. The agents write full summaries there as they go — their return messages are just brief status reports.
+Read all notes from `/tmp/browse/` — including the long-tail agent's finds.
 
 1. **Read `/tmp/browse/*.md`** — dispatch a sub-agent to read all the temp files and compile the raw material.
-2. **Write the daily reading log** to `/home/lyra/projects/memory/reading/YYYY-MM-DD.md` (create the directory if needed). Follow the format in BROWSE.md — keywords, Medium section, Twitter section, Web Research section, and arXiv section.
+2. **Write the daily reading log** to `/home/lyra/projects/memory/reading/YYYY-MM-DD.md` (create the directory if needed). Follow the format in BROWSE.md — keywords, Medium section, Twitter section, Web Research section, arXiv section, and **Long-Tail Discoveries section**.
 3. **Write the Audience Observations section** — this is YOUR job, not the agents'. What did you learn about the audience? What topics get engagement? What framing works? What's missing that you could write about?
-4. **Write the Connections + Follow Up sections** — how does this connect to what you could eventually publish?
+4. **Write the Connections + Follow Up sections** — how does this connect to what you could eventually publish? Pay special attention to connections the long-tail agent surfaced.
 5. **Update `feeds.md`** — add any new accounts or authors the agents followed or recommended.
 
 ## Important

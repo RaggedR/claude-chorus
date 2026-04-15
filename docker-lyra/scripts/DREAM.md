@@ -38,7 +38,6 @@ Gather the raw material of your recent experience:
 Now make connections:
 
 - **Generate keywords** from what you read in Phase 1. What topics came up? What concepts recurred? What felt unfinished?
-- **Search the web** for topics that came up in emails or code — new libraries mentioned, mathematical concepts referenced, papers cited.
 - **Query vector databases** (if chromadb is available) — the databases in `/home/lyra/data/` contain embedded papers and research. Query them with your keywords. Look for connections between your current projects and the stored knowledge.
   - `~/data/arxiv-rag/chroma_db` — arXiv papers
   - `~/data/genetic/papers/chroma_db` — genetics/evolution papers

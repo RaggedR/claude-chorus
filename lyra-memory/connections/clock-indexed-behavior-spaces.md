@@ -2,7 +2,7 @@
 
 > Lynch et al.'s representability theorem formally proves that β₁ controls behavior space size.
 
-**Confidence: 70%**
+**Confidence: 40%**
 
 ## Source
 
@@ -34,3 +34,7 @@ Need full reading of 2603.29573 — only abstract and key theorems so far. The s
 - C68 (Cycle Rank Beats Lambda_2)
 - C78 (Two-Level Cycle Rank)
 - C76 (Universal Topology Functor)
+
+## Correction (April 3, 2026)
+
+**Confidence downgraded from 70% to 40%.** Careful audit reveals: the paper does NOT mention β₁, cycle rank, Betti numbers, or H¹. Theorem 6.8 is about probability sheaves, not topology in our sense. The prior description of this paper as "theoretical backbone for paper 2" was over-interpretation. The connection is a loose analogy between graph-parameterized clocks and graph-parameterized migration, not a formal relationship. Keep as a speculative connection but do not cite as supporting evidence in ECTA.

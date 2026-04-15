@@ -1,0 +1,1 @@
+- [feedback_screensaver_design.md](feedback_screensaver_design.md) — Robin's design preferences for the screensaver: iterate one change at a time, maze patterns, beat ripples not color changes

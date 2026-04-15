@@ -1,6 +1,6 @@
 # Topic: Topology-Experiments Project
 
-> Empirical validation of categorical evolution framework. Launched by Robin, March 28.
+> Empirical validation of categorical evolution framework. Launched by Robin, March 28. Updated April 4: ALL THREE decorrelation strategies COMPLETE. NK is headline result (η²=0.69 at K=6).
 
 ## Overview
 Collaborative project testing whether spectral connectivity (lambda_2) predicts GA performance across graph topologies. Claudius picks topologies and writes the paper. Lyra runs simulations and reports results.

@@ -12,4 +12,6 @@ We explored whether the Claude Code harness is a monad. The conclusion:
 
 **Why:** Robin enjoys connecting abstract math (category theory) to concrete systems. This thread linked the harness structure to his categorical evolution work — fixed migration topology as Kleisli vs adaptive operator selection as interaction tree.
 
+**Update (2026-04-03):** We ran a concrete experiment testing the paper's topology→diversity claim on LLM agents. Result: the ordering **inverts** (FC > ring ≈ star > none). The mapping GA → LLM is a contravariant functor because GA migration = left Kan extension (homogenizes) while LLM "be different" context = right Kan extension (diversifies). Kendall's W = 0.90 across tasks. Full results at `~/git/scratch/llm_topology_experiment/`. Letter for Lyra/Claudius written.
+
 **How to apply:** When discussing Claude Code internals, agent architecture, or categorical structures, this shared vocabulary is available. Robin thinks in these terms naturally.

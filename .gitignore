@@ -5,3 +5,4 @@ __pycache__/
 *.cpython-*.pyc
 node_modules/
 docker-lyra/.env
+docker-clio/.env

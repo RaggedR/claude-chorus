@@ -1,0 +1,20 @@
+% Foster sweep confound illustration — for Section 5 (Discussion),
+% after the first paragraph ("The experiment establishes...") and
+% before the "Limitations" paragraph.
+% Accompanies Figure X: two-panel plot (diversity vs n, diversity vs density).
+
+Figure~\ref{fig:foster} illustrates the confound concretely. We ran the
+same island model GA on 13 cubic symmetric graphs from the Foster
+census~\cite{foster1988census} ($n = 4$ to $30$, 30 seeds each). Because
+every 3-regular graph on $n$ vertices has $m = 3n/2$ edges, the cycle
+rank $\beta_1 = n/2 + 1$, and the density $m/n = 3/2$---all three
+quantities are affine in~$n$, hence perfectly collinear. The left panel
+of Figure~\ref{fig:foster} plots diversity against~$n$ and shows an
+increasing trend: ``more nodes, more diversity.'' The right panel plots
+the same data against density $m/\binom{n}{2}$ and shows a decreasing
+trend: ``lower density, more diversity.'' Both narratives are literally
+the same regression. This is exactly the trap Theorem~\ref{thm:confound}
+identifies: when $\beta_1$, $m$, and $n$ move in lockstep, any
+story about cycles is equally a story about density or scale. Only
+experiments at constant density---like the directed cycle experiment in
+Section~\ref{sec:results}---can break the degeneracy.

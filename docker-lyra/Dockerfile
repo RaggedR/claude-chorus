@@ -42,7 +42,8 @@ RUN /usr/lib/node_modules/@playwright/mcp/node_modules/.bin/playwright install -
 # Python email and utility packages
 RUN python3 -m pip install --break-system-packages \
     aiosmtplib imapclient email-validator schedule "mcp[cli]" \
-    httpx python-dotenv
+    httpx python-dotenv \
+    pandas scipy numpy matplotlib
 
 # LaTeX (for compiling GECCO/ACT papers)
 RUN apt-get update && apt-get install -y \
